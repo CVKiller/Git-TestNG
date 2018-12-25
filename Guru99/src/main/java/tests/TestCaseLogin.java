@@ -1,9 +1,6 @@
 package tests;
 
-import org.apache.poi.poifs.filesystem.FilteringDirectoryNode;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -51,30 +48,41 @@ public class TestCaseLogin extends BaseTest {
 			ExcelUtil.setCellData("Failed", i, 5);
 		}
 	}
-// TC6,7
+
+	// TC6,7
 	@Test(enabled = true)
 	public void TestCaseLoginFail_null() {
 		int lastRow = ExcelUtil.getExcelWSheet().getPhysicalNumberOfRows();
 		System.out.println("LastRow:::" + lastRow);
-
-		for (int i = 5; i < lastRow; i++) {
-			String val_pass = ExcelUtil.getRowData(5).getCell(4).toString();
-			String val_user = ExcelUtil.getRowData(6).getCell(4).toString();
-			String inUserName = ExcelUtil.getRowData(i).getCell(1) == null ? ""
-					: ExcelUtil.getRowData(i).getCell(1).toString();
-			String inPassWord = ExcelUtil.getRowData(i).getCell(2) == null ? ""
+		int count = 1;
+		for (int i = 5; i <= lastRow; i++) {
+			// String val_pass = ExcelUtil.getRowData(5).getCell(4).toString();
+			// String val_user = ExcelUtil.getRowData(6).getCell(4).toString();
+			String inUserName = ExcelUtil.getRowData(i).getCell(2) == null ? ""
 					: ExcelUtil.getRowData(i).getCell(2).toString();
-			if (inUserName == null) {
-				WebElement exp1 = driver.findElement(By.xpath("//label[@id='message23']"));
-				Utils.compareText(exp1.getText(), val_user);
-				ExcelUtil.setCellData("FAIL", i, 5);
-			} else if (inPassWord == null) {
-				WebElement exp1 = driver.findElement(By.xpath("//label[@id='message18']"));
-				Utils.compareText(exp1.getText(), val_pass);
-				ExcelUtil.setCellData("FAIL", i, 5);
-			}
-
+			String inPassWord = ExcelUtil.getRowData(i).getCell(3) == null ? ""
+					: ExcelUtil.getRowData(i).getCell(3).toString();
+			System.out.println(
+					"Lần [" + count + "] với Username :[" + inUserName + "] - và Password :[" + inPassWord + "]");
+			getAlert(inUserName, inPassWord, i);
+			System.out.println("Done lần :[" + count + "]");
+			count++;
 		}
 
+	}
+
+	public void getAlert(String username, String password, int row) {
+		if (!username.equals("")) {
+			Utils.getElement(loginPage.userName).sendKeys(username);
+		} else if (!password.equals("")) {
+			Utils.getElement(loginPage.passWord).sendKeys(password);
+		}
+		Utils.getElement(loginPage.btnLogin).click();
+		Alert alert = driver.switchTo().alert();
+		String exp = alert.getText();
+		Utils.compareText(exp, "User or Password is not valid");
+		alert.accept();
+		Utils.compareText(driver.getCurrentUrl(), Links.URL_login);
+		ExcelUtil.setCellData("FAIL", row, 5);
 	}
 }

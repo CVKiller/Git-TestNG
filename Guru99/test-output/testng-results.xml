@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="7455" started-at="2018-12-25T09:56:02Z" finished-at="2018-12-25T09:56:09Z">
+  <suite name="Default suite" duration-ms="13936" started-at="2018-12-25T16:12:49Z" finished-at="2018-12-25T16:13:03Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="7455" started-at="2018-12-25T09:56:02Z" finished-at="2018-12-25T09:56:09Z">
+    <test name="Default test" duration-ms="13936" started-at="2018-12-25T16:12:49Z" finished-at="2018-12-25T16:13:03Z">
       <class name="tests.TestCaseLogin">
-        <test-method status="PASS" signature="setUpSheetData()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="setUpSheetData" is-config="true" duration-ms="458" started-at="2018-12-25T16:56:02Z" finished-at="2018-12-25T16:56:02Z">
+        <test-method status="PASS" signature="setUpSheetData()[pri:0, instance:tests.TestCaseLogin@46d56d67]" name="setUpSheetData" is-config="true" duration-ms="618" started-at="2018-12-25T23:12:49Z" finished-at="2018-12-25T23:12:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpSheetData -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="setUp" is-config="true" duration-ms="5921" started-at="2018-12-25T16:56:02Z" finished-at="2018-12-25T16:56:08Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestCaseLogin@46d56d67]" name="setUp" is-config="true" duration-ms="6823" started-at="2018-12-25T23:12:49Z" finished-at="2018-12-25T23:12:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="TestCaseLoginFail_null()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="TestCaseLoginFail_null" duration-ms="10" started-at="2018-12-25T16:56:08Z" finished-at="2018-12-25T16:56:08Z">
+        <test-method status="FAIL" signature="TestCaseLoginFail_null()[pri:0, instance:tests.TestCaseLogin@46d56d67]" name="TestCaseLoginFail_null" duration-ms="5213" started-at="2018-12-25T23:12:56Z" finished-at="2018-12-25T23:13:01Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
-	at tests.TestCaseLogin.TestCaseLoginFail_null(TestCaseLogin.java:62)
+	at tests.TestCaseLogin.TestCaseLoginFail_null(TestCaseLogin.java:61)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -50,7 +50,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TestCaseLoginFail_null -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="tearDown" is-config="true" duration-ms="1054" started-at="2018-12-25T16:56:08Z" finished-at="2018-12-25T16:56:09Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestCaseLogin@46d56d67]" name="tearDown" is-config="true" duration-ms="1268" started-at="2018-12-25T23:13:01Z" finished-at="2018-12-25T23:13:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
