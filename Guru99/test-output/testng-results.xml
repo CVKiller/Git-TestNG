@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" total="1" passed="0">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="7455" started-at="2018-12-25T09:56:02Z" finished-at="2018-12-25T09:56:09Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="7455" started-at="2018-12-25T09:56:02Z" finished-at="2018-12-25T09:56:09Z">
+      <class name="tests.TestCaseLogin">
+        <test-method status="PASS" signature="setUpSheetData()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="setUpSheetData" is-config="true" duration-ms="458" started-at="2018-12-25T16:56:02Z" finished-at="2018-12-25T16:56:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpSheetData -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="setUp" is-config="true" duration-ms="5921" started-at="2018-12-25T16:56:02Z" finished-at="2018-12-25T16:56:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="FAIL" signature="TestCaseLoginFail_null()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="TestCaseLoginFail_null" duration-ms="10" started-at="2018-12-25T16:56:08Z" finished-at="2018-12-25T16:56:08Z">
+          <exception class="java.lang.NullPointerException">
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException
+	at tests.TestCaseLogin.TestCaseLoginFail_null(TestCaseLogin.java:62)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:85)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:696)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:882)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1189)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:124)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:108)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TestCaseLoginFail_null -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="tearDown" is-config="true" duration-ms="1054" started-at="2018-12-25T16:56:08Z" finished-at="2018-12-25T16:56:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.TestCaseLogin -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
