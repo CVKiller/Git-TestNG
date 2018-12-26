@@ -15,7 +15,8 @@ public class BaseTest extends Links {
 	public void setUp() {
 		// run trước các method test
 		// driver.navigate().refresh();
-		System.setProperty("webdriver.chrome.driver","F:\\Selenium\\BNKiller\\Guru99(2)\\Guru99\\src\\main\\resources\\Driver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\baong\\Documents\\GitHub\\Git-TestNG\\Guru99\\src\\main\\resources\\Driver\\chromedriver.exe");
+		//System.setProperty("webdriver.chrome.driver","F:\\Selenium\\BNKiller\\Guru99(2)\\Guru99\\src\\main\\resources\\Driver\\chromedriver.exe");
 		driver = new ChromeDriver();
 		driver.get(URL_login);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

@@ -41,7 +41,7 @@ public class AddNewCus extends BaseTest {
 		String email = ExcelUtil.getRowData(1).getCell(10).toString();
 		String pass = ExcelUtil.getRowData(1).getCell(11).toString();
 
-		addNewCusPage.doAddnewCus(cusName, gen_Male, birthDate, address, city, state, pin, mobile, email, pass);
+//		addNewCusPage.doAddnewCus(cusName, gen_Male, birthDate, address, city, state, pin, mobile, email, pass);
 		WebElement exp2 = driver.findElement(By.xpath("//tbody//tbody//tr[1]//td[1]"));
 		Utils.compareText(exp2.getText(), expRs);
 		ExcelUtil.setCellData("PASSED", 1, 14);
