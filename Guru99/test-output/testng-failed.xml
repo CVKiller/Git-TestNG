@@ -5,10 +5,10 @@
     <classes>
       <class name="tests.TestCaseLogin">
         <methods>
+          <include name="checkValidate"/>
           <include name="tearDown"/>
           <include name="setUp"/>
           <include name="setUpSheetData"/>
-          <include name="TestCaseLoginFail_null"/>
         </methods>
       </class> <!-- tests.TestCaseLogin -->
     </classes>

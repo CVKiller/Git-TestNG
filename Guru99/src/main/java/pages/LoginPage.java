@@ -29,5 +29,11 @@ public class LoginPage {
 		Utils.getElement(passWord).sendKeys(inPassWord);
 		Utils.getElement(btnLogin).click();
 	}
+	
+	public void doValidation(String inuserName, String inPassWord) {
+		Utils.getElement(userName).sendKeys(inuserName);
+		Utils.getElement(passWord).sendKeys(inPassWord);
+		//Utils.getElement(btnLogin).click();
+	}
 
 }

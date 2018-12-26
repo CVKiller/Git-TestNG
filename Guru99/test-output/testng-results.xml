@@ -2,24 +2,32 @@
 <testng-results skipped="0" failed="1" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="13936" started-at="2018-12-25T16:12:49Z" finished-at="2018-12-25T16:13:03Z">
+  <suite name="Default suite" duration-ms="38677" started-at="2018-12-26T09:47:59Z" finished-at="2018-12-26T09:48:37Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="13936" started-at="2018-12-25T16:12:49Z" finished-at="2018-12-25T16:13:03Z">
+    <test name="Default test" duration-ms="38677" started-at="2018-12-26T09:47:59Z" finished-at="2018-12-26T09:48:37Z">
       <class name="tests.TestCaseLogin">
-        <test-method status="PASS" signature="setUpSheetData()[pri:0, instance:tests.TestCaseLogin@46d56d67]" name="setUpSheetData" is-config="true" duration-ms="618" started-at="2018-12-25T23:12:49Z" finished-at="2018-12-25T23:12:49Z">
+        <test-method status="PASS" signature="setUpSheetData()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="setUpSheetData" is-config="true" duration-ms="505" started-at="2018-12-26T16:47:59Z" finished-at="2018-12-26T16:47:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpSheetData -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestCaseLogin@46d56d67]" name="setUp" is-config="true" duration-ms="6823" started-at="2018-12-25T23:12:49Z" finished-at="2018-12-25T23:12:56Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="setUp" is-config="true" duration-ms="6959" started-at="2018-12-26T16:47:59Z" finished-at="2018-12-26T16:48:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="TestCaseLoginFail_null()[pri:0, instance:tests.TestCaseLogin@46d56d67]" name="TestCaseLoginFail_null" duration-ms="5213" started-at="2018-12-25T23:12:56Z" finished-at="2018-12-25T23:13:01Z">
-          <exception class="java.lang.NullPointerException">
+        <test-method status="FAIL" signature="checkValidate()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="checkValidate" duration-ms="30166" started-at="2018-12-26T16:48:06Z" finished-at="2018-12-26T16:48:36Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at tests.TestCaseLogin.TestCaseLoginFail_null(TestCaseLogin.java:61)
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:494)
+	at org.testng.Assert.assertTrue(Assert.java:42)
+	at org.testng.Assert.assertTrue(Assert.java:52)
+	at util.Utils.compareText(Utils.java:75)
+	at tests.TestCaseLogin.checkValidate(TestCaseLogin.java:131)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -46,11 +54,11 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- TestCaseLoginFail_null -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestCaseLogin@46d56d67]" name="tearDown" is-config="true" duration-ms="1268" started-at="2018-12-25T23:13:01Z" finished-at="2018-12-25T23:13:02Z">
+        </test-method> <!-- checkValidate -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.TestCaseLogin@224edc67]" name="tearDown" is-config="true" duration-ms="1036" started-at="2018-12-26T16:48:36Z" finished-at="2018-12-26T16:48:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

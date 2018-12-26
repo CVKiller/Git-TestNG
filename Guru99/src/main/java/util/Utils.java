@@ -68,12 +68,14 @@ public class Utils extends BaseTest{
 		return text;
 	}
 // So sánh text
-	public static void compareText(String exp, String act) {
+	public static boolean compareText(String act, String exp) {
 		System.out.println("Expected is :" + exp);
 		System.out.println("Actual is :" + act);
 		if (!exp.equals(act)) {
 			Assert.assertTrue(false);
+			return false;
 		}
+		return true;
 	}
 // Lấy value qua key	
 	public static By getValueByKey(String key,Properties PropName) {
