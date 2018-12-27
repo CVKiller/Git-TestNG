@@ -5,10 +5,8 @@
     <classes>
       <class name="tests.TestCaseLogin">
         <methods>
-          <include name="checkValidate"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
           <include name="setUpSheetData"/>
+          <include name="TestCaseLoginPassed"/>
         </methods>
       </class> <!-- tests.TestCaseLogin -->
     </classes>

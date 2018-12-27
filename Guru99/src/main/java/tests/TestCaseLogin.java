@@ -1,33 +1,32 @@
 package tests;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.google.common.util.concurrent.Uninterruptibles;
-import com.google.gson.annotations.Until;
-
 import pages.LoginPage;
 import util.BaseTest;
 import util.ExcelUtil;
-import util.Links;
 import util.Utils;
 
 public class TestCaseLogin extends BaseTest {
-	public LoginPage loginPage;
+	LoginPage loginPage;
 
 	@BeforeTest
 	public void setUpSheetData() {
-		System.out.println("************* Bắt đầu khởi tạo dữ liệu **********");
+		System.out.println("@BeforeTest************* Bắt đầu khởi tạo dữ liệu **********");
 		loginPage = new LoginPage(driver);
 		ExcelUtil.setExcelFileSheet("Login");
 	}
 
 	// TC1
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void TestCaseLoginPassed() {
+		System.out.println("Test");
 		String inUserName = ExcelUtil.getRowData(1).getCell(2).toString();
 		String inPassWord = ExcelUtil.getRowData(1).getCell(3).toString();
 		loginPage.doLogin(inUserName, inPassWord);
@@ -75,6 +74,7 @@ public class TestCaseLogin extends BaseTest {
 			System.out.println(
 					"Lần [" + count + "] với Username :[" + inUserName + "] - và Password :[" + inPassWord + "]");
 			getAlert(inUserName, inPassWord, i);
+
 			System.out.println("Done lần :[" + count + "]");
 			count++;
 		}
@@ -105,10 +105,10 @@ public class TestCaseLogin extends BaseTest {
 	}
 
 	// TC 8->10
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void checkValidate() throws InterruptedException {
 		int count = 1;
-		for (int i = 8; i <= 9; i++) {
+		for (int i = 8; i < 10; i++) {
 			String inUserName = ExcelUtil.getRowData(i).getCell(2) == null ? ""
 					: ExcelUtil.getRowData(i).getCell(2).toString();
 			String inPassWord = ExcelUtil.getRowData(i).getCell(3) == null ? ""
@@ -119,20 +119,50 @@ public class TestCaseLogin extends BaseTest {
 			loginPage.doValidation(inUserName, inPassWord);
 			if (inUserName.equals("")) {
 				WebElement val_user = driver.findElement(By.xpath("//label[@id='message23']"));
+				driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
 				String exp = val_user.getText().toString();
 				Utils.compareText(exp, "User-ID must not be blank");
+				/*
+				 * if (Utils.compareText(exp, getExpectRowToCompare(1))) {
+				 * ExcelUtil.setCellData("PASSED", 1, 5); } else {
+				 * ExcelUtil.setCellData("FAILED", 1, 5); }
+				 */
 			}
 			if (inPassWord.equals("")) {
 				WebElement header = driver.findElement(By.xpath("//h2[@class='barone']"));
 				header.click();
-				Thread.sleep(30000);
+				// driver.manage().timeouts().implicitlyWait(10000, TimeUnit.MILLISECONDS);
+				Thread.sleep(10000);
 				WebElement val_pass = driver.findElement(By.xpath("//label[@id='message18']"));
 				String exp2 = val_pass.getText().toString();
 				Utils.compareText(exp2, "Password must not be blank");
-
+				/*
+				 * if (Utils.compareText(exp2, getExpectRowToCompare(1))) {
+				 * ExcelUtil.setCellData("PASSED", 1, 5); } else {
+				 * ExcelUtil.setCellData("FAILED", 1, 5); }
+				 */
 			}
+
 			System.out.println("Done lần :[" + count + "]");
 			count++;
 		}
 	}
+
+// TC 11
+	@Test(enabled = false)
+	public void checkbtn_reset() {
+		String inUserName = ExcelUtil.getRowData(1).getCell(2).toString();
+		String inPassWord = ExcelUtil.getRowData(1).getCell(3).toString();
+		loginPage.doValidation(inUserName, inPassWord);
+		WebElement btn_reset = driver.findElement(By.xpath("//input[@value='RESET']"));
+		btn_reset.click();
+		if (inUserName.equals("") && inPassWord.equals("")) {
+			ExcelUtil.setCellData("PASSED", 11, 5);
+		} else {
+			ExcelUtil.setCellData("FAILED", 11, 5);
+		}
+	}
+// TC 12
+	
+	
 }

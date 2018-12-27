@@ -13,6 +13,7 @@ public class BaseTest extends Links {
 
 	@BeforeMethod
 	public void setUp() {
+		System.out.println("Basetest @BeforeMethod setUp");
 		// run trước các method test
 		// driver.navigate().refresh();
 		//System.setProperty("webdriver.chrome.driver","C:\\Users\\baong\\Documents\\GitHub\\Git-TestNG\\Guru99\\src\\main\\resources\\Driver\\chromedriver.exe");
@@ -27,6 +28,7 @@ public class BaseTest extends Links {
 	@AfterMethod
 	// run sau method test
 	public void tearDown() {
+		System.out.println("Basetest @AfterMethod tearDown");
 		driver.quit();
 	}
 

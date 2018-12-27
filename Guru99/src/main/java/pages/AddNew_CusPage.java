@@ -15,6 +15,7 @@ public class AddNew_CusPage {
 	public By cusName;
 	public By gen_Male;
 	public By gen_Female;
+	public By gender;
 	public By birthDate;
 	public By address;
 	public By city;
@@ -30,8 +31,9 @@ public class AddNew_CusPage {
 		this.driver = driver;
 		Properties prop = Utils.loadProperties(FILE_NAME);
 		cusName = Utils.getValueByKey("AddCus.CusName", prop);
-		gen_Male = Utils.getValueByKey("AddCus.Gen_male	", prop);
-		gen_Female = Utils.getValueByKey("AddCus.Gen_female	", prop);
+		gender= Utils.getValueByKey("AddCus.Gender", prop);
+		//gen_Male = Utils.getValueByKey("AddCus.Gen_male	", prop);
+		//gen_Female = Utils.getValueByKey("AddCus.Gen_female	", prop);
 		birthDate = Utils.getValueByKey("AddCus.BirthDate", prop);
 		address = Utils.getValueByKey("AddCus.Address", prop);
 		city = Utils.getValueByKey("AddCus.City	", prop);
@@ -47,7 +49,7 @@ public class AddNew_CusPage {
 	public void doAddnewCus(String incusrName,String gender, String inbirthdate, String inaddress, String incity, String instate,
 			String inpin, String inmobile, String inemail, String inpass, String mode) {
 		Utils.getElement(cusName).sendKeys(incusrName);
-		Utils.getElement(gen_Male).click();
+		Utils.getElement(gender).click();
 		Utils.getElement(birthDate).sendKeys(inbirthdate);
 		Utils.getElement(address).sendKeys(inaddress);
 		Utils.getElement(city).sendKeys(incity);

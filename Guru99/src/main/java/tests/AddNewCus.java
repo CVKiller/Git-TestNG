@@ -12,15 +12,15 @@ import util.ExcelUtil;
 import util.Utils;
 
 public class AddNewCus extends BaseTest {
-	public LoginPage loginPage;
-	public AddNew_CusPage addNewCusPage;
+	LoginPage loginPage;
+	AddNew_CusPage addNewCusPage;
 
 	@BeforeTest
 	public void setUpSheetData() {
 		System.out.println("************* Bắt đầu khởi tạo dữ liệu **********");
 		loginPage = new LoginPage(driver);
-		loginPage.doLogin("mngr168086", "YqasUbu");
 		WebElement btn_NewCus = driver.findElement(By.xpath("//a[contains(text(),'New Customer')]"));
+		loginPage.doLogin("mngr168086", "YqasUbu");
 		btn_NewCus.click();
 		addNewCusPage = new AddNew_CusPage(driver);
 		ExcelUtil.setExcelFileSheet("AddNew_Cus");
@@ -41,7 +41,7 @@ public class AddNewCus extends BaseTest {
 		String email = ExcelUtil.getRowData(1).getCell(10).toString();
 		String pass = ExcelUtil.getRowData(1).getCell(11).toString();
 
-//		addNewCusPage.doAddnewCus(cusName, gen_Male, birthDate, address, city, state, pin, mobile, email, pass);
+		//addNewCusPage.doAddnewCus(cusName,gen_Male, birthDate, address, city, state, pin, mobile, email, pass);
 		WebElement exp2 = driver.findElement(By.xpath("//tbody//tbody//tr[1]//td[1]"));
 		Utils.compareText(exp2.getText(), expRs);
 		ExcelUtil.setCellData("PASSED", 1, 14);
